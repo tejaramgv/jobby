@@ -1,5 +1,5 @@
 import Loader from 'react-loader-spinner'
-
+import Cookies from 'js-cookie';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 import './index.css'
 
@@ -14,12 +14,15 @@ const ProfileDetails = props => {
   const renderProfile = () => {
     const {profileDetails} = props
     const {name, profileImageUrl, shortBio} = profileDetails
-
+const profileUrl=Cookies.get("profileUrl")
+const profilename=Cookies.get("profile")
+const email=Cookies.get("email")
     return (
       <div className="profile-details-container">
-        <img src={profileImageUrl} alt="profile" className="profile-image" />
-        <h1 className="profile-name">Santosh Kumar</h1>
-        <p className="profile-bio">{shortBio}</p>
+        <img src={profileUrl} alt="profile" className="profile-image" />
+        <img src=""alt=""/>
+        <h1 className="profile-name">{profilename==="null"?"Add name in GitHub Account":profilename}</h1>
+        <p className="profile-bio">{email!=="null" && email}</p>
       </div>
     )
   }

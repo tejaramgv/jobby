@@ -4,6 +4,19 @@
   min-height: 100vh;
   background-color: #121212;
 }
+.link{
+  text-decoration: none;
+  background-color: rgb(9, 69, 148);
+  color:white;
+  padding:6px;
+  border-radius:3px;
+  width:40px;
+  transition:all 0.5s ease;
+}
+.link:hover{
+  background-color: rgb(64, 164, 231);
+
+}
 .job-details-content-container {
   flex-grow: 1;
   padding-top: 25px;

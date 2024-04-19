@@ -1,4 +1,7 @@
 import {Link, withRouter} from 'react-router-dom'
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+
 import {AiFillHome} from 'react-icons/ai'
 import {BsFillBriefcaseFill} from 'react-icons/bs'
 import {FiLogOut} from 'react-icons/fi'
@@ -6,9 +9,18 @@ import Cookies from 'js-cookie'
 
 import './index.css'
 
-const Header = props => {
-  const onClickLogout = () => {
+const auth = firebase.auth();
+const Header = (props) => {
+  const onClickLogout = async() => {
     Cookies.remove('jwt_token')
+    Cookies.remove('profileUrl')
+    Cookies.remove('profile')
+    Cookies.remove("email")
+    await auth.signOut()
+    await auth.onAuthStateChanged((person) => {
+      console.log(`biw${person}`);
+    
+    })
     const {history} = props
     history.replace('/login')
   }

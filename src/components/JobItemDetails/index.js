@@ -1,4 +1,5 @@
 import {Component} from 'react'
+import {Link} from 'react-router-dom'
 import Cookies from 'js-cookie'
 import {AiFillStar} from 'react-icons/ai'
 import {IoLocationSharp} from 'react-icons/io5'
@@ -195,7 +196,9 @@ class JobItemDetails extends Component {
               src={lifeAtCompnay.imageUrl}
               alt="life at company"
             />
+           
           </div>
+          <Link className="link" to={`/apply/${title}`}>Apply</Link>
         </div>
         <h1 className="similar-jobs-heading">Similar Jobs</h1>
         <ul className="similar-jobs-list">

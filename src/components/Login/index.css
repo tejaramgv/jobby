@@ -5,6 +5,19 @@
   justify-content: center;
   align-items: center;
 }
+.icons{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+}
+.google{
+  border-radius:50%;
+  width:25px;
+  height:25px;
+  margin-right:6px;
+ 
+}
 .login-form {
   background-color: #272727;
   padding: 20px;
